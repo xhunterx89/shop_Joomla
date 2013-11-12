@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.6.0" client="site" method="upgrade">
+<name>Ice Jshopping Search</name>
+    <creationDate>01 August 2011</creationDate>
+    <author>IceTheme</author>
+    <authorEmail>info@icetheme.com</authorEmail>
+    <authorUrl>http://www.icetheme.com</authorUrl>
+    <copyright></copyright>
+    <license>Open Source License, GNU GPL</license>
+    <version>1.7.0</version>
+    <description>Modified JoomShopping Search Module by IceTheme. Added the possibility to search within categories</description>
+    <files>
+        <filename module="mod_ice_jshopping_search">mod_ice_jshopping_search.php</filename>
+        <folder>element</folder> 
+	    <folder>tmpl</folder>
+        <filename>helper.php</filename>
+		<filename>index.html</filename>      
+    </files>
+    <languages>
+        <language
+            tag="en-GB">languages/en-GB.mod_ice_jshopping_search.ini</language>
+    </languages>     
+    <config>
+        <fields name="params">
+            <fieldset name="basic">  
+                <field
+                    name="advanced_search"
+                    type="radio"
+                    default="1"
+                    label="SHOW_ADVANCED_SEARCH_LINK"
+                    description="SHOW_ADVANCED_SEARCH_LINK_DESC">
+                    <option
+                        value="0">JNO</option>
+                    <option
+                        value="1">JYES</option>
+                </field>
+                <field  
+                    name="category_id" 
+                    type="categories" 
+                    default=""                    
+                    label="SEARCH_IN_CATEGORY" 
+                    description="SEARCH_IN_CATEGORY_DESC" 
+                    addfieldpath="/modules/mod_ice_jshopping_search/element"/>                    
+               
+				 <field
+                    name="enable_categories"
+                    type="radio"
+                    default="1"
+                    label="ENABLE_CATEGORY_SELECT_BOX"
+                    description="ENABLE_CATEGORY_SELECT_BOX_DESC">
+                    <option
+                        value="0">JNO</option>
+                    <option
+                        value="1">YES</option>
+                </field>
+				
+				 <field
+                    name="moduleclass_sfx"
+                    type="text"
+                    label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                    description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+					
+					
+            </fieldset> 
+        </fields>
+    </config>        
+</extension>

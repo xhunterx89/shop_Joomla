@@ -1,0 +1,14 @@
+<div class="jshop">
+    <h1><?php print _JSHOP_MY_ACCOUNT?></h1>
+    
+    <ul>
+          <li>     <a href =  "<?php print $this->href_edit_data?>"><?php print _JSHOP_EDIT_DATA ?></a> </li> 
+            
+            
+             <li>     <a href =  "<?php print $this->href_show_orders?>"><?php print _JSHOP_SHOW_ORDERS ?></a> </li> 
+          
+          
+            <li>      <a href =  "<?php print $this->href_logout?>"><?php print _JSHOP_LOGOUT ?></a>  </li> 
+          
+    </ul>
+</div>

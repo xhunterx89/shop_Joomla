@@ -1,0 +1,1 @@
+<p class="sucess"><?php print _JSHOP_THANK_YOU_ORDER?></p>

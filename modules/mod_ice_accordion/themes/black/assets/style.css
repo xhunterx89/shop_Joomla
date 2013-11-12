@@ -1,0 +1,53 @@
+
+/*---------------------------------------------------------------- 
+  Copyright:
+  (C) 2008 - 2010 IceTheme
+  
+  License:
+  GNU/GPL http://www.gnu.org/copyleft/gpl.html
+  
+  Author:
+  IceTheme - http://wwww.icetheme.com
+---------------------------------------------------------------- */
+
+.iceaccordion-theme-black {
+	color:#F8F8FF}
+	
+
+	.iceaccordion-theme-black h4.toggler {
+		border-bottom:1px dotted #555;
+		color:#F8F8FF;
+		background-color:#222;}
+	.iceaccordion-theme-black h4.toggler span {
+		color:#F8F8FF !important;}
+	
+	
+	.iceaccordion-theme-black div.accordion_content a {
+		color:#F8F8FF;}
+	.iceaccordion-theme-black div.accordion_content {
+		background-color:#222;
+		color:#F8F8FF;}
+		
+
+.iceaccordion-paging .iceaccordion-prev,
+.iceaccordion-paging .iceaccordion-next {
+	background-image:url(iceaccordion_arrows.png)}
+		
+ul.iceaccordion-numbers li {
+	color:#888;}
+		
+	ul.iceaccordion-numbers li:hover,
+	ul.iceaccordion-numbers li.active {
+			color: #fff}
+			
+
+.iceaccordion-loading {
+    background-image: url(loading.gif)}
+.jshop_price, .jshop_old_price {
+    color: #950000;
+}
+.iceaccordion .product_label {
+    margin-left: 0px;
+    margin-top: -5px;
+    position: absolute;
+}

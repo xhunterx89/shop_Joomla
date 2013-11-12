@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="2.5">
+	<name>Swedish Language Pack</name>
+	<packagename>sv-SE</packagename>
+	<version>2.5.10.1</version>
+	<creationDate>2013-04-25</creationDate>
+	<author>SvenskJoomla : svenskjoomla.se</author>
+	<authorEmail>info@svenskjoomla.se</authorEmail>
+	<authorUrl>www.svenskjoomla.se</authorUrl>
+    <copyright>Copyright (C) 2005 - 2013 SvenskJoomla! och Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<url></url>
+	<packager>Joomla! Svenska</packager>
+	<packagerurl>www.svenskjoomla.se</packagerurl>
+	<description>
+		<![CDATA[
+		<h3>Svenskt språkpaket för Joomla version 2.5.10 v1 har installerats.</h3>
+		<br>
+		<div style="font-weight: normal;">Översatt av <b>SvenskJoomla</b> - <a target="_blank" href="http://www.svenskjoomla.se">www.svenskjoomla.se</a><br>&nbsp; </div>
+		]]>
+	</description>
+	<files>
+        <file type="language" client="site" id="sv-SE">site_sv-SE.zip</file>
+        <file type="language" client="administrator" id="sv-SE">admin_sv-SE.zip</file>
+	</files>
+    <updateservers>
+        <server type="collection" priority="1" name="Accredited Joomla! Translations">http://update.joomla.org/language/translationlist.xml</server>
+    </updateservers>
+</extension>

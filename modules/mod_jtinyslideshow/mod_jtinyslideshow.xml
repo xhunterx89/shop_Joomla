@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" version="2.5" method="upgrade">
+    <name>MOD_JTINYSLIDESHOW</name>
+    <version>2.5-3</version>
+    <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+    <author>Viktor Vogel</author>
+    <authoremail>admin@kubik-rubik.de</authoremail>
+    <authorurl>http://www.kubik-rubik.de</authorurl>
+    <copyright>This module its released under GPL/GNU License</copyright>
+    <creationDate>24-Sep-2012</creationDate>
+    <description>MOD_JTINYSLIDESHOW_XML_DESCRIPTION</description>
+    <files>
+        <filename module="mod_jtinyslideshow">mod_jtinyslideshow.php</filename>
+        <filename module="mod_jtinyslideshow">helper.php</filename>
+        <filename module="mod_jtinyslideshow">jtinyfader.js</filename>
+        <filename module="mod_jtinyslideshow">jtinyslider.js</filename>
+        <filename module="mod_jtinyslideshow">jtinyslideshow.css</filename>
+        <filename module="mod_jtinyslideshow">index.html</filename>
+        <filename module="mod_jtinyslideshow">tmpl/default.php</filename>
+        <filename module="mod_jtinyslideshow">tmpl/index.html</filename>
+        <folder module="mod_jtinyslideshow">images</folder>
+        <folder module="mod_jtinyslideshow">fields</folder>
+    </files>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.mod_jtinyslideshow.ini</language>
+        <language tag="en-GB">en-GB/en-GB.mod_jtinyslideshow.sys.ini</language>
+        <language tag="de-DE">de-DE/de-DE.mod_jtinyslideshow.ini</language>
+        <language tag="de-DE">de-DE/de-DE.mod_jtinyslideshow.sys.ini</language>
+        <language tag="fr-FR">fr-FR/fr-FR.mod_jtinyslideshow.ini</language>
+        <language tag="fr-FR">fr-FR/fr-FR.mod_jtinyslideshow.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params" addfieldpath="/modules/mod_jtinyslideshow/fields">
+            <fieldset name="basic">
+                <field type="krdonationcodecheck" />
+                <field type="krversioncheck" name="krversioncheck" default="jts|2.5-3" />
+                <field name="spacer" type="spacer" class="text" label="MODULE_JTINY_FIELD_NAME_SETTINGS_LABEL" />
+                <field name="type" type="radio" default="1" label="MOD_JTINYSLIDESHOW_TYPE" description="MOD_JTINYSLIDESHOW_TYPEDESC">
+                    <option value="1">MOD_JTINYSLIDESHOW_SLIDER</option>
+                    <option value="0">MOD_JTINYSLIDESHOW_FADER</option>
+                </field>
+                <field name="time_intervall" type="text" default="5" label="MOD_JTINYSLIDESHOW_TIMEINTERVAL" description="MOD_JTINYSLIDESHOW_TIMEINTERVALDESC"/>
+                <field name="resume" type="radio" default="1" label="MOD_JTINYSLIDESHOW_RESUME" description="MOD_JTINYSLIDESHOW_RESUMEDESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="visible" type="radio" default="1" label="MOD_JTINYSLIDESHOW_VISIBLE" description="MOD_JTINYSLIDESHOW_VISIBLEDESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="position" type="text" default="1" label="MOD_JTINYSLIDESHOW_POSITION" description="MOD_JTINYSLIDESHOW_POSITIONDESC"/>
+                <field name="width" type="text" default="500" label="MOD_JTINYSLIDESHOW_WIDTH" description="MOD_JTINYSLIDESHOW_WIDTHDESC"/>
+                <field name="height" type="text" default="300" label="MOD_JTINYSLIDESHOW_HEIGHT" description="MOD_JTINYSLIDESHOW_HEIGHTDESC"/>
+                <field name="direction" type="radio" default="0" label="MOD_JTINYSLIDESHOW_SLIDERDIRECTION" description="MOD_JTINYSLIDESHOW_SLIDERDIRECTIONDESC">
+                    <option value="1">MOD_JTINYSLIDESHOW_VERTICAL</option>
+                    <option value="0">MOD_JTINYSLIDESHOW_HORIZONTAL</option>
+                </field>
+                <field name="pagination_position" type="radio" default="1" label="MOD_JTINYSLIDESHOW_PAGINATIONPOSITION" description="MOD_JTINYSLIDESHOW_PAGINATIONPOSITIONDESC">
+                    <option value="1">MOD_JTINYSLIDESHOW_INSIDE</option>
+                    <option value="2">MOD_JTINYSLIDESHOW_OUTSIDE</option>
+                    <option value="0">MOD_JTINYSLIDESHOW_INVISIBLE</option>
+                </field>
+                <field name="show_arrows" type="radio" default="1" label="MOD_JTINYSLIDESHOW_SHOWARROWS" description="MOD_JTINYSLIDESHOW_SHOWARROWSDESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="spacer1" type="spacer" class="text" label="MOD_JTINYSLIDESHOW_SLIDE1LABEL" />
+                <field name="slide_text_image1" type="radio" default="1" label="MOD_JTINYSLIDESHOW_SLIDETEXTIMAGE" description="MOD_JTINYSLIDESHOW_SLIDETEXTIMAGEDESC">
+                    <option value="1">MOD_JTINYSLIDESHOW_TEXT</option>
+                    <option value="0">MOD_JTINYSLIDESHOW_IMAGE</option>
+                </field>
+                <field name="text_header1" type="text" default="" label="MOD_JTINYSLIDESHOW_TEXTHEADER" description="MOD_JTINYSLIDESHOW_TEXTHEADERDESC"/>
+                <field name="text1" type="textarea" cols="50" rows="8" default="" filter="raw" label="MOD_JTINYSLIDESHOW_CONTENT" description="MOD_JTINYSLIDESHOW_CONTENTDESC" />
+                <field name="image1" type="text" default="" label="MOD_JTINYSLIDESHOW_IMAGELINK" description="MOD_JTINYSLIDESHOW_IMAGELINKDESC" size="88" />
+                <field name="imagealt1" type="text" default="" label="MOD_JTINYSLIDESHOW_IMAGEALT" description="MOD_JTINYSLIDESHOW_IMAGEALTDESC" />
+                <field name="image_scale1" type="radio" default="1" label="MOD_JTINYSLIDESHOW_IMAGESCALE" description="MOD_JTINYSLIDESHOW_IMAGESCALEDESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="spacer2" type="spacer" hr="true" />
+                <field name="slide2" type="radio" default="0" label="MOD_JTINYSLIDESHOW_SLIDE2" description="MOD_JTINYSLIDESHOW_SLIDE2DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="slide_text_image2" type="radio" default="1" label="MOD_JTINYSLIDESHOW_SLIDETEXTIMAGE" description="MOD_JTINYSLIDESHOW_SLIDETEXTIMAGEDESC">
+                    <option value="1">MOD_JTINYSLIDESHOW_TEXT</option>
+                    <option value="0">MOD_JTINYSLIDESHOW_IMAGE</option>
+                </field>
+                <field name="text_header2" type="text" default="" label="MOD_JTINYSLIDESHOW_TEXTHEADER" description="MOD_JTINYSLIDESHOW_TEXTHEADERDESC"/>
+                <field name="text2" type="textarea" cols="50" rows="8" default="" filter="raw" label="MOD_JTINYSLIDESHOW_CONTENT" description="MOD_JTINYSLIDESHOW_CONTENTDESC" />
+                <field name="image2" type="text" default="" label="MOD_JTINYSLIDESHOW_IMAGELINK" description="MOD_JTINYSLIDESHOW_IMAGELINKDESC" size="88" />
+                <field name="imagealt2" type="text" default="" label="MOD_JTINYSLIDESHOW_IMAGEALT" description="MOD_JTINYSLIDESHOW_IMAGEALTDESC" />
+                <field name="image_scale2" type="radio" default="1" label="MOD_JTINYSLIDESHOW_IMAGESCALE" description="MOD_JTINYSLIDESHOW_IMAGESCALEDESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="spacer3" type="spacer" hr="true" />
+                <field name="slide3" type="radio" default="0" label="MOD_JTINYSLIDESHOW_SLIDE3" description="MOD_JTINYSLIDESHOW_SLIDE3DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="slide_text_image3" type="radio" default="1" label="MOD_JTINYSLIDESHOW_SLIDETEXTIMAGE" description="MOD_JTINYSLIDESHOW_SLIDETEXTIMAGEDESC">
+                    <option value="1">MOD_JTINYSLIDESHOW_TEXT</option>
+                    <option value="0">MOD_JTINYSLIDESHOW_IMAGE</option>
+                </field>
+                <field name="text_header3" type="text" default="" label="MOD_JTINYSLIDESHOW_TEXTHEADER" description="MOD_JTINYSLIDESHOW_TEXTHEADERDESC"/>
+                <field name="text3" type="textarea" cols="50" rows="8" default="" filter="raw" label="MOD_JTINYSLIDESHOW_CONTENT" description="MOD_JTINYSLIDESHOW_CONTENTDESC" />
+                <field name="image3" type="text" default="" label="MOD_JTINYSLIDESHOW_IMAGELINK" description="MOD_JTINYSLIDESHOW_IMAGELINKDESC" size="88" />
+                <field name="imagealt3" type="text" default="" label="MOD_JTINYSLIDESHOW_IMAGEALT" description="MOD_JTINYSLIDESHOW_IMAGEALTDESC" />
+                <field name="image_scale3" type="radio" default="1" label="MOD_JTINYSLIDESHOW_IMAGESCALE" description="MOD_JTINYSLIDESHOW_IMAGESCALEDESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="spacer4" type="spacer" hr="true" />
+                <field name="slide4" type="radio" default="0" label="MOD_JTINYSLIDESHOW_SLIDE4" description="MOD_JTINYSLIDESHOW_SLIDE4DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="slide_text_image4" type="radio" default="1" label="MOD_JTINYSLIDESHOW_SLIDETEXTIMAGE" description="MOD_JTINYSLIDESHOW_SLIDETEXTIMAGEDESC">
+                    <option value="1">MOD_JTINYSLIDESHOW_TEXT</option>
+                    <option value="0">MOD_JTINYSLIDESHOW_IMAGE</option>
+                </field>
+                <field name="text_header4" type="text" default="" label="MOD_JTINYSLIDESHOW_TEXTHEADER" description="MOD_JTINYSLIDESHOW_TEXTHEADERDESC"/>
+                <field name="text4" type="textarea" cols="50" rows="8" default="" filter="raw" label="MOD_JTINYSLIDESHOW_CONTENT" description="MOD_JTINYSLIDESHOW_CONTENTDESC" />
+                <field name="image4" type="text" default="" label="MOD_JTINYSLIDESHOW_IMAGELINK" description="MOD_JTINYSLIDESHOW_IMAGELINKDESC" size="88" />
+                <field name="imagealt4" type="text" default="" label="MOD_JTINYSLIDESHOW_IMAGEALT" description="MOD_JTINYSLIDESHOW_IMAGEALTDESC" />
+                <field name="image_scale4" type="radio" default="1" label="MOD_JTINYSLIDESHOW_IMAGESCALE" description="MOD_JTINYSLIDESHOW_IMAGESCALEDESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="spacer5" type="spacer" hr="true" />
+                <field name="slide5" type="radio" default="0" label="MOD_JTINYSLIDESHOW_SLIDE5" description="MOD_JTINYSLIDESHOW_SLIDE5DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="slide_text_image5" type="radio" default="1" label="MOD_JTINYSLIDESHOW_SLIDETEXTIMAGE" description="MOD_JTINYSLIDESHOW_SLIDETEXTIMAGEDESC">
+                    <option value="1">MOD_JTINYSLIDESHOW_TEXT</option>
+                    <option value="0">MOD_JTINYSLIDESHOW_IMAGE</option>
+                </field>
+                <field name="text_header5" type="text" default="" label="MOD_JTINYSLIDESHOW_TEXTHEADER" description="MOD_JTINYSLIDESHOW_TEXTHEADERDESC"/>
+                <field name="text5" type="textarea" cols="50" rows="8" default="" filter="raw" label="MOD_JTINYSLIDESHOW_CONTENT" description="MOD_JTINYSLIDESHOW_CONTENTDESC" />
+                <field name="image5" type="text" default="" label="MOD_JTINYSLIDESHOW_IMAGELINK" description="MOD_JTINYSLIDESHOW_IMAGELINKDESC" size="88" />
+                <field name="imagealt5" type="text" default="" label="MOD_JTINYSLIDESHOW_IMAGEALT" description="MOD_JTINYSLIDESHOW_IMAGEALTDESC" />
+                <field name="image_scale5" type="radio" default="1" label="MOD_JTINYSLIDESHOW_IMAGESCALE" description="MOD_JTINYSLIDESHOW_IMAGESCALEDESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="spacer6" type="spacer" hr="true" />
+                <field name="slide6" type="radio" default="0" label="MOD_JTINYSLIDESHOW_SLIDE6" description="MOD_JTINYSLIDESHOW_SLIDE6DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="slide_text_image6" type="radio" default="1" label="MOD_JTINYSLIDESHOW_SLIDETEXTIMAGE" description="MOD_JTINYSLIDESHOW_SLIDETEXTIMAGEDESC">
+                    <option value="1">MOD_JTINYSLIDESHOW_TEXT</option>
+                    <option value="0">MOD_JTINYSLIDESHOW_IMAGE</option>
+                </field>
+                <field name="text_header6" type="text" default="" label="MOD_JTINYSLIDESHOW_TEXTHEADER" description="MOD_JTINYSLIDESHOW_TEXTHEADERDESC"/>
+                <field name="text6" type="textarea" cols="50" rows="8" default="" filter="raw" label="MOD_JTINYSLIDESHOW_CONTENT" description="MOD_JTINYSLIDESHOW_CONTENTDESC" />
+                <field name="image6" type="text" default="" label="MOD_JTINYSLIDESHOW_IMAGELINK" description="MOD_JTINYSLIDESHOW_IMAGELINKDESC" size="88" />
+                <field name="imagealt6" type="text" default="" label="MOD_JTINYSLIDESHOW_IMAGEALT" description="MOD_JTINYSLIDESHOW_IMAGEALTDESC" />
+                <field name="image_scale6" type="radio" default="1" label="MOD_JTINYSLIDESHOW_IMAGESCALE" description="MOD_JTINYSLIDESHOW_IMAGESCALEDESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="spacer7" type="spacer" hr="true" />
+                <field name="slide7" type="radio" default="0" label="MOD_JTINYSLIDESHOW_SLIDE7" description="MOD_JTINYSLIDESHOW_SLIDE7DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="slide_text_image7" type="radio" default="1" label="MOD_JTINYSLIDESHOW_SLIDETEXTIMAGE" description="MOD_JTINYSLIDESHOW_SLIDETEXTIMAGEDESC">
+                    <option value="1">MOD_JTINYSLIDESHOW_TEXT</option>
+                    <option value="0">MOD_JTINYSLIDESHOW_IMAGE</option>
+                </field>
+                <field name="text_header7" type="text" default="" label="MOD_JTINYSLIDESHOW_TEXTHEADER" description="MOD_JTINYSLIDESHOW_TEXTHEADERDESC"/>
+                <field name="text7" type="textarea" cols="50" rows="8" default="" filter="raw" label="MOD_JTINYSLIDESHOW_CONTENT" description="MOD_JTINYSLIDESHOW_CONTENTDESC" />
+                <field name="image7" type="text" default="" label="MOD_JTINYSLIDESHOW_IMAGELINK" description="MOD_JTINYSLIDESHOW_IMAGELINKDESC" size="88" />
+                <field name="imagealt7" type="text" default="" label="MOD_JTINYSLIDESHOW_IMAGEALT" description="MOD_JTINYSLIDESHOW_IMAGEALTDESC" />
+                <field name="image_scale7" type="radio" default="1" label="MOD_JTINYSLIDESHOW_IMAGESCALE" description="MOD_JTINYSLIDESHOW_IMAGESCALEDESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="spacer8" type="spacer" hr="true" />
+                <field name="slide8" type="radio" default="0" label="MOD_JTINYSLIDESHOW_SLIDE8" description="MOD_JTINYSLIDESHOW_SLIDE8DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="slide_text_image8" type="radio" default="1" label="MOD_JTINYSLIDESHOW_SLIDETEXTIMAGE" description="MOD_JTINYSLIDESHOW_SLIDETEXTIMAGEDESC">
+                    <option value="1">MOD_JTINYSLIDESHOW_TEXT</option>
+                    <option value="0">MOD_JTINYSLIDESHOW_IMAGE</option>
+                </field>
+                <field name="text_header8" type="text" default="" label="MOD_JTINYSLIDESHOW_TEXTHEADER" description="MOD_JTINYSLIDESHOW_TEXTHEADERDESC"/>
+                <field name="text8" type="textarea" cols="50" rows="8" default="" filter="raw" label="MOD_JTINYSLIDESHOW_CONTENT" description="MOD_JTINYSLIDESHOW_CONTENTDESC" />
+                <field name="image8" type="text" default="" label="MOD_JTINYSLIDESHOW_IMAGELINK" description="MOD_JTINYSLIDESHOW_IMAGELINKDESC" size="88" />
+                <field name="imagealt8" type="text" default="" label="MOD_JTINYSLIDESHOW_IMAGEALT" description="MOD_JTINYSLIDESHOW_IMAGEALTDESC" />
+                <field name="image_scale8" type="radio" default="1" label="MOD_JTINYSLIDESHOW_IMAGESCALE" description="MOD_JTINYSLIDESHOW_IMAGESCALEDESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+            </fieldset>
+            <fieldset name="donation">
+                <field name="donation_code" type="text" default="" size="40" label="KR_DONATION_CODE" description="KR_DONATION_CODEDESC" />
+            </fieldset>
+            <fieldset name="versioncheck">
+                <field name="versioncheck_enable" type="list" default="1" label="KR_VERSION_CHECK" description="KR_VERSION_CHECKDESC">
+                    <option value="1">KR_VERSION_CHECK_ONCESESSION</option>
+                    <option value="2">KR_VERSION_CHECK_ONEVERYLOAD</option>
+                    <option value="0">JNO</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

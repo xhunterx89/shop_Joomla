@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.6.0" client="site" method="upgrade">
+<name>Ice Jshopping Cart</name>
+    <creationDate>01 August 2011</creationDate>
+    <author>IceTheme</author>
+    <authorEmail>info@icetheme.com</authorEmail>
+    <authorUrl>http://www.icetheme.com</authorUrl>
+    <copyright></copyright>
+    <license>Open Source License, GNU GPL</license>
+    <version>1.7.0</version>
+    <description>Enhanced JoomShooping Cart Module by IceTheme. Now you can use Ajax technology to add your products to the cart and as well view your added products with a nice dropdown.</description>
+    <files>
+        <filename module="mod_ice_jshopping_cart">mod_ice_jshopping_cart.php</filename>
+        <folder module="mod_ice_jshopping_cart">assets</folder>
+		<folder module="mod_ice_jshopping_cart">tmpl</folder>
+        <filename>ajax.php</filename>
+        <filename>index.html</filename>
+    </files>
+    <languages>
+        <language tag="en-GB">languages/en-GB.mod_ice_jshopping_cart.ini</language>
+		<language tag="de-DE">languages/de-DE.mod_ice_jshopping_cart.ini</language>
+		<language tag="ru-RU">languages/ru-RU.mod_ice_jshopping_cart.ini</language>
+    </languages>     
+    <config>
+        <fields name="params">
+            <fieldset name="basic">  
+                <field name="ajax" type="radio" label="USE_AJAX" description="USE_AJAX_DESC" default="1">
+					<option value="0">LNO</option>
+					<option value="1">LYES</option>
+				</field>
+				<field name="dropdown" type="radio" label="DROPDOWN" description="DROPDOWN_DESC" default="1">
+					<option value="0">LNO</option>
+					<option value="1">LYES</option>
+				</field>
+				<field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />   
+				
+            </fieldset> 
+        </fields>
+    </config>     
+</extension>

@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<extension 
+	type="module" 
+	version="1.6.0" 
+	client="site" 
+	method="upgrade">
+    <name>IceAccordion Module</name>
+    <creationDate>November 2010</creationDate>
+    <author>IceTheme</author>
+    <copyright>GNU / GPL</copyright>
+    <authorEmail>info@icetheme.com</authorEmail>
+    <authorUrl>http://www.icetheme.com</authorUrl>
+    <version>1.6.1</version>
+	<description>
+	<![CDATA[
+	 <a target="_blank" href="icetheme.com"><b>IceAccordion  Module</b></a> </br><br>IceAccordion Module can display a set of articles in a small area on your website in an accordion way. This Module is released under the GPL license.<br><br><ul><li><a href="http://icetheme.com/Joomla-Extensions/iceaccordion.html">IceAccordion Page</a></li><li><a target="_blank" href="http://icetheme.com/Forums">Discussion</a></li></ul></li></ul> <script type="text/javascript" src="../modules/mod_ice_accordion/assets/form.js"></script> <style>.lof-group{ padding:2px;color:#666;background:#CCC;cursor:hand; font-weight:bold; cursor:pointer}</style>
+	]]>
+	</description>
+     <files>
+        <filename module="mod_ice_accordion">mod_ice_accordion.php</filename>
+        <filename module="mod_ice_accordion">helper.php</filename>
+		<filename module="mod_ice_accordion">index.html</filename>
+		<filename module="mod_ice_accordion">CHANGELOG.php</filename>
+		<filename module="mod_ice_accordion">LICENSE.php</filename>
+		<filename module="mod_ice_accordion">ajax.php</filename>
+		
+        <folder module="mod_ice_accordion">libs</folder>
+		<folder module="mod_ice_accordion">assets</folder>
+        <folder module="mod_ice_accordion">tmpl</folder>
+		<folder module="mod_ice_accordion">themes</folder>
+    </files>
+	<languages>
+		<language tag="en-GB">languages/en-GB/en-GB.mod_ice_accordion.ini</language>
+	</languages>
+	<config>
+    <fields 
+		name="params"
+		addfieldpath="/modules/mod_ice_accordion/libs/elements">
+		<fieldset 
+			name="basic">
+			<field 
+					name="theme" 
+					type="folderlist"
+					directory="modules/mod_ice_accordion/themes/" 
+					default=""
+					label="SELECT_THEME" 
+					description="THEME_FOR_VIEW">
+
+			</field>
+		   <field 
+			name="auto_renderthumb" 
+			type="radio" 
+			default="1" 
+			label="RENDER_THUMBNAIL" 
+			description="RENDER_THUMBNAIL_DESC">
+			  <option value="0">NO</option>
+			  <option value="1">YES</option>
+			</field>
+			<field 
+				name="image_quanlity" 
+				type="text" 
+				default="100" 
+				label="IMAGE_QUANLITY" 
+				description="IMAGE_QUANLITY_DESC" />		  
+			<field 
+				name="main_width" 
+				type="text" 
+				default="160" 
+				label="DISPLAY_MAIN_WIDTH" 
+				description="DISPLAY_MAIN_WIDTH_DESC">
+			</field>
+			
+			<field 
+				name="main_height" 
+				type="text" 
+				default="120" 
+				label="DISPLAY_MAIN_HEIGHT" 
+				description="DISPLAY_MAIN_HEIGHT_DESC">
+			</field>
+			
+					<field name="" type="spacer" default="" label="" description="" />
+					<field name="" type="spacer" default="" label="" description="" />
+				
+			
+			<field 
+				name="data_source" 
+				type="list" 
+				default="content" 
+				title="SOURCE" 
+				description="SOURCE_DESC">
+					<option value="content">Content</option>
+					<option value="joomshopping">Joom Shopping</option>
+			</field>
+			<field type="lofspacer" />
+			</fieldset>
+			<fieldset name="CONTENTSETTING">	
+				<field 
+					name="source" 
+					type="radio" 
+					default="content_category" 
+					label="SOURCE_FROM"  
+					description="SOURCE_FROM_DESC" >
+						<option value="content_category">CATEGORY</option>
+						<option value="article_ids">ARTICLES_IDS</option>
+					</field>
+				<field 
+					name="article_ids" 
+					type="text" 
+					default="" 
+					label="ARTICLES_IDS"
+					description="ARTICLES_IDS_DESC" 
+					size="70" />
+				<field 
+					name="content_category"
+					type="lofcategory"
+					default=""
+					label="CATEGORIES_SELECTION"
+					description="CATEGORIES_SELECTION_DESC" />
+				<field 
+					name="content_featured_items_show"
+					type="list" 
+					default="1" 
+					label="FEATURED_ITEMS_SHOW" 
+					description="FEATURED_ITEMS_SHOW_DESC">
+					  <option value="0">HIDE</option>
+					  <option value="1">SHOW</option>
+					  <option value="2">Only_Featured_Items</option>
+				</field>	
+				<field 
+					name="ordering"
+					type="list"
+					default="ordering"
+					label="ARTCILES_SORTED_BY"
+					description="ARTCILES_SORTED_BY_DESC">
+						<option value="ordering">ORDERING</option>
+						<option value="hits">HITS</option>
+						<option value="created">CREATED</option>
+						<option value="rand">RANDOM</option>
+				</field>
+				<field
+					name="order_direction"
+					type="radio"
+					default="ASC"
+					label="ORDER_DIRECTION"
+					description="ORDER_DIRECTION_DESC">
+					<option value="ASC">ASCENDING</option>
+					<option value="DESC">DESCENDING</option>
+				</field>
+			
+		 </fieldset>
+		 <fieldset name="JOOMSHOPPINGSETTING">
+			<field name="source_setting"
+					type="loflabel"
+					label=""
+					title="SOURCE_SETTING"
+					description="SOURCE_SETTING_DESC"/>
+			<field name="source_from" label="SOURCE_FROM" default="cat_ids" description="SOURCE_FROM_DESC" type="list">
+					<option value="cat_ids">CATEGORIES</option>
+					<option value="actual_cat">Actual Category</option>
+					<option value="product_ids">Product Ids</option>
+					<option value="product_label">PRODUCT_LABEL</option>
+					<option value="manufactures">Manufactures</option>
+			</field>
+			<field name="jproduct_ids" class="product_ids" type="text" size="40" label="PRODUCT_IDS" description="PRODUCT_IDS_DESC"/>
+			<field name="jcat_ids" class="cat_ids" type="lofjcategory" label="CATEGORIES" description="CATEGORIES_DESC" multiple="true"/>
+			<field name="jmanufactures" class="manufactures" size="5" type="lofmanufacture" label="MANUFACTURES" multiple="true" description="MANUFACTURES_DESC"/>
+			<field name="jproduct_label" class="product_label" size="5" type="lofproductlabel" label="PRODUCT_LABEL" multiple="true" description="PRODUCT_LABEL_DESC"/>
+			<field name="filtering_type" type="radio"
+					default="1"
+					label="MOD_ACCORDION_FILTER_LABEL"
+					description="MOD_ACCORDION_FILTER_DESC"
+				>
+					<option value="1">MOD_ACCORDION_OPTION_INCLUSIVE_VALUE
+					</option>
+					<option value="0">MOD_ACCORDION_OPTION_EXCLUSIVE_VALUE
+					</option>
+			</field>
+			 <field 
+					name="sorting_setting"
+					type="loflabel"
+					label=""
+					title="SORTING_SETTING"
+					description="SORTING_SETTING_DESC"/>
+			 <field name="sort_product" label="SORT_PRODUCTS" default="" description="SORT_PRODUCTS_DESC" type="list">
+					<option value="price__asc">Lowest_First</option>
+					<option value="price__desc">Highest_First</option>
+					<option value="date__desc">Newest_First</option>
+					<option value="date__asc">Oldest_First</option>
+					<option value="most_sold">Most_sold_Products</option>
+					<option value="latest_sold">Latest_Sold_Products</option>
+					<option value="most_rate">Most_Rated_Products</option>
+					<option value="most_comment">Most_Commented_Products</option>
+					<option value="name__asc">Name_Acceding</option>
+					<option value="name__desc">Name_Descending</option>
+					<option value="random">Random</option>
+			</field>
+			
+			<field name="display_setting"
+					type="loflabel"
+					label=""
+					title="DISPLAY_SETTING"
+					description="DISPLAY_SETTING_DESC"/>
+				<field name="preview_width" type="text" default="200" label="PREVIEW_IMAGE_WIDTH" description="PREVIEW_IMAGE_WIDTH_DESC"/>
+				<field name="preview_height" type="text" default="200" label="PREVIEW_IMAGE_HEIGHT" description="PREVIEW_IMAGE_HEIGHT_DESC"/>
+				<field name="show_preview" type="radio" default="1" label="SHOW_PREVIEW_IMAGE" description="SHOW_PREVIEW_IMAGE_DESC">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="show_product_image" type="radio" default="1" label="SHOW_PRODUCT_IMAGE" description="SHOW_PRODUCT_IMAGE_DESC">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="show_image_label" type="radio" default="1" label="SHOW_IMAGE_LABEL" description="SHOW_IMAGE_LABEL_DESC">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="show_rating" type="radio" default="1" label="SHOW_RATING" description="SHOW_RATING_DESC">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="show_description" type="radio" default="1" label="SHOW_DESCRIPTION" description="SHOW_DESCRIPTION_DESC">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="show_old_price" type="radio" default="1" label="SHOW_OLD_PRICE" description="SHOW_OLD_PRICE_DESC">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="show_price" type="radio" default="1" label="SHOW_PRICE" description="SHOW_PRICE_DESC">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+			</fieldset>
+			<fieldset name="ITEM_SETTING">
+				<field 
+					name="limit_items" 
+					type="text" 
+					default="5" 
+					title="LIMIT_ITEMS" 
+					description="LIMIT_ITEMS_DESC" />
+				<field 
+					name="number_page"
+					type="list" 
+					default="0" 
+					label="NUMBER_PAGE" 
+					description="NUMBER_PAGE_DESC">
+					  <option value="1">No Slides</option>
+					  <option value="2">2</option>
+					  <option value="3">3</option>
+					  <option value="4">4</option>
+					  <option value="4">5</option>
+				</field>
+					
+				<field 
+					name="title_max_chars" 
+					type="text" 
+					default="100" 
+					label="TITLE_MAX_CHARS" 
+					description="TITLE_MAX_CHARS_DESC" />
+				<field 
+					name="description_max_chars" 
+					type="text" 
+					default="100" 
+					label="DESCIPTION_MAX_CHARS" 
+					description="DESCIPTION_MAX_CHARS_DESC" />
+				<field 
+					name="default_item" 
+					type="text" 
+					default="0" 
+					label="DEFAULT_ITEM_EXPAND" 
+					description="DEFAULT_ITEM_EXPAND_DESC">
+				</field>
+		
+			
+					<field name="" type="spacer" default="" label="" description="" />
+					<field name="" type="spacer" default="" label="" description="" />
+				
+				<field 
+					name="show_readmore" 
+					type="radio" 
+					default="1" 
+					label="REAMORE_SHOW" 
+					description="REAMORE_SHOW_DESC">
+						<option value="0">NO</option>
+						<option value="1">YES</option>
+				</field>	
+		</fieldset>
+		<fieldset 
+			name="advanced">
+			<field 
+				name="moduleclass_sfx" 
+				type="text" 
+				default="" 
+				label="MODULE_CLASS_SUFFIX" 
+				description="PARAMMODULECLASSSUFFIX" />	
+				
+				<field name="" type="spacer" default="" label="" description="" />
+			<field name="" type="spacer" default="" label="" description="" />
+					
+					
+			<field 
+				name="enable_cache"
+				type="list" 
+				default="0" 
+				label="CACHING" 
+				description="CACHING_DESC">
+					<option value="1">Use Cache Data</option>
+					<option value="0">Don't cache</option>
+				</field>
+				<field 
+					name="cache_time" 
+					type="text" 
+					default="15" 
+					label="CACHE_TIME"
+					description="CACHE_TIME_DESC" />
+		
+		</fieldset>
+
+	</fields>
+	
+	
+
+	</config>	
+</extension>

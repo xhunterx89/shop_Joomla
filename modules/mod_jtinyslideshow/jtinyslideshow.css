@@ -1,0 +1,41 @@
+/**
+ *  @Copyright
+ *
+ *  @package	J!TinySlideshow for Joomla 2.5
+ *  @author     Viktor Vogel {@link http://joomla-extensions.kubik-rubik.de/}
+ *  @version	Version: 2.5-3 - 24-Sep-2012
+ *  @link       Project page {@link http://joomla-extensions.kubik-rubik.de/jts-jtinyslideshow}
+ *
+ *  Original script: Slider / Fading JavaScript Slideshow / TinyFader by Michael Leigeber (http://www.leigeber.com/)
+ *
+ *  @license GNU/GPL
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#jtinywrapper {width:578px; height: 350px; margin:20px auto 0px;}
+.jtinysliderbutton {float:left; padding-top:134px}
+.jtinysliderbutton img {cursor:pointer; background: #9F9F9F;}
+.jtinysliderbutton img:hover {background:#666}
+#jtinyslideshow {float:left; width:500px; height:300px; border:2px solid #999; background:#fff; text-align: left; position: relative;}
+#jtinyslides {position:absolute; width:500px; height:300px; list-style:none; margin:0px !important; padding:0px !important;}
+#jtinyslides li {width:500px; height:300px; padding: 0px !important; background: none repeat scroll 0 0 #FFF !important; float: left;}
+.jtinypagination {float:right !important; list-style:none; height:25px; margin:15px 38px 0 32px !important; padding: 0 !important; position: relative !important; z-index: 9999;}
+.jtinypagination li {float:left; cursor:pointer; padding:5px 8px !important; background:none repeat scroll 0 0 white !important; border:1px solid #999; margin:0 4px 0 0 !important; text-align:center; color:#222}
+.jtinypagination li img {text-align: center;}
+.jtinypagination li:hover {background:#AFAFAF !important; border:1px solid #999; color:#000; padding:5px 8px; margin:0 4px 0 0 !important;}
+li.jtinycurrent {border:1px solid #999; background:#CFCFCF !important}
+li.jtinycontent {width:464px; height:270px; padding:15px 18px 15px 18px !important; background:#FFF;}
+.jtinycontent h1 {font:22px Georgia,Verdana; margin-bottom:15px; color:#036; text-align:center;}
+.jtinycontent p {color:#000; text-align: center;}
+li.jtinyimage {text-align: center;}

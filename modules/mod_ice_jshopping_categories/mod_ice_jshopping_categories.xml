@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.6.0" client="site" method="upgrade">
+<name>Ice Jshopping Categories</name>
+    <creationDate>01 August 2011</creationDate>
+    <author>IceTheme</author>
+    <authorEmail>info@icetheme.com</authorEmail>
+    <authorUrl>http://www.icetheme.com</authorUrl>
+    <copyright></copyright>
+    <license>Open Source License, GNU GPL</license>
+    <version>1.7.0</version>
+    <description>Enhanced JoomShooping Categories Module with dropdown. As well you can show small icons of your shop categories.</description>
+	<files>
+		<filename module="mod_ice_jshopping_categories">mod_ice_jshopping_categories.php</filename>
+        <folder module="mod_ice_jshopping_categories">libs</folder>
+        <folder module="mod_ice_jshopping_categories">assets</folder>
+		<filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>mod_ice_jshopping_categories.xml</filename>
+        <filename>index.html</filename>
+	</files>
+    <languages>
+        <language tag="en-GB">languages/en-GB.mod_ice_jshopping_categories.ini</language>
+		<language tag="de-DE">languages/de-DE.mod_ice_jshopping_categories.ini</language>
+		<language tag="ru-RU">languages/ru-RU.mod_ice_jshopping_categories.ini</language>
+    </languages>     
+    <config>
+        <fields name="params">
+            <fieldset name="basic">  
+                <field name="show_image" type="radio" default="1" label="SHOW_IMAGE" description="SHOW_IMAGE_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+				<field name="image_width" type="text" default="20" label="IMAGE_MAIN_WIDTH" description="IMAGE_MAIN_WIDTH_DESC" size="5" />
+				<field name="image_heigth" type="text" default="20" label="IMAGE_MAIN_HEIGHT" description="IMAGE_MAIN_HEIGHT_DESC" size="5" />
+				
+				<field name="" type="spacer" default="" label="" description="" />
+				<field name="" type="spacer" default="" label="" description="" />
+					
+					
+                <field name="sort" type="list" default="id" label="SORT" description="SORT_DESC">
+                    <option value="id">ID</option>
+                    <option value="name">NAME</option>
+                    <option value="order">ORDERING</option>                        
+                </field>                
+                <field name="ordering" type="radio" default="asc" label="ORDERING" description="ORDERING_DESC">
+                    <option value="asc">ASCENDING</option>
+                    <option value="desc">DESCENDING</option>
+                </field>               
+				
+                <field name="showcounter" type="radio" default="1" label="COUNTER" description="COUNTER_DESC">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+				
+				<field name="" type="spacer" default="" label="" description="" />
+				<field name="" type="spacer" default="" label="" description="" />
+				
+                <field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />                               
+            </fieldset> 
+        </fields>
+    </config>     
+</extension>
